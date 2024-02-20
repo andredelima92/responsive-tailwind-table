@@ -6,52 +6,114 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h1 class="text-3xl font-bold underline">responsive table</h1>
+    <h1 class="text-3xl font-bold underline ml-2">responsive table</h1>
 
-    <div class="flex justify-center items-center px-10">
-      <div class="overflow-x-auto mt-10 min-w-full border rounded-md">
-        <table class="min-w-full divide-y divide-gray-300">
-          <thead class="bg-gray-50">
-            <tr>
-              <th scope="col" class="py-3.5 pl-6 text-left text-sm font-semibold text-gray-900">
-                Name
-              </th>
-              <th
-                scope="col"
-                class="hidden sm:table-cell py-3.5 pl-6 text-left text-sm font-semibold text-gray-900"
-              >
-                Title
-              </th>
-              <th
-                scope="col"
-                class="hidden lg:table-cell py-3.5 pl-6 text-left text-sm font-semibold text-gray-900"
-              >
-                Email
-              </th>
-              <th scope="col" class="py-3.5 pl-6 text-left text-sm font-semibold text-gray-900">
-                Role
-              </th>
-              <th scope="col" class="py-3.5 pl-6 text-left"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="pl-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                Jane Cooper
-              </td>
-              <td class="hidden sm:table-cell pl-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                Regional Paradigm Technician
-              </td>
-              <td class="hidden lg:table-cell pl-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                jane@test.com
-              </td>
-              <td class="pl-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
-              <td class="pl-6 py-4 pr-4 whitespace-nowrap text-right text-sm font-medium">
-                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="mt-10">
+      <div class="flex flex-col justify-center items-center px-10">
+        <h2 class="text-2xl font-bold underline">hiding some fields in small size</h2>
+        <div class="overflow-x-auto min-w-full border rounded-md">
+          <table class="min-w-full divide-y divide-gray-300">
+            <thead class="bg-gray-50">
+              <tr>
+                <th scope="col" class="py-3.5 pl-6 text-left text-sm font-semibold text-gray-900">
+                  Name
+                </th>
+                <th
+                  scope="col"
+                  class="hidden sm:table-cell py-3.5 pl-6 text-left text-sm font-semibold text-gray-900"
+                >
+                  Title
+                </th>
+                <th
+                  scope="col"
+                  class="hidden lg:table-cell py-3.5 pl-6 text-left text-sm font-semibold text-gray-900"
+                >
+                  Email
+                </th>
+                <th scope="col" class="py-3.5 pl-6 text-left text-sm font-semibold text-gray-900">
+                  Role
+                </th>
+                <th scope="col" class="py-3.5 pl-6 text-left"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="pl-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  Jane Cooper
+                </td>
+                <td class="hidden sm:table-cell pl-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  Regional Paradigm Technician
+                </td>
+                <td class="hidden lg:table-cell pl-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  jane@test.com
+                </td>
+                <td class="pl-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                <td class="pl-6 py-4 pr-4 whitespace-nowrap text-right text-sm font-medium">
+                  <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10">
+      <div class="flex flex-col justify-center items-center px-10">
+        <h2 class="text-2xl font-bold underline">break field to same column in small size</h2>
+        <div class="overflow-x-auto min-w-full border rounded-md">
+          <table class="min-w-full divide-y divide-gray-300">
+            <thead class="bg-gray-50">
+              <tr>
+                <th
+                  scope="col"
+                  class="w-full sm:w-auto py-3.5 pl-6 text-left text-sm font-semibold text-gray-900"
+                >
+                  Name
+                </th>
+                <th
+                  scope="col"
+                  class="hidden sm:table-cell py-3.5 pl-6 text-left text-sm font-semibold text-gray-900"
+                >
+                  Title
+                </th>
+                <th
+                  scope="col"
+                  class="hidden lg:table-cell py-3.5 pl-6 text-left text-sm font-semibold text-gray-900"
+                >
+                  Email
+                </th>
+                <th scope="col" class="py-3.5 pl-6 text-left text-sm font-semibold text-gray-900">
+                  Role
+                </th>
+                <th scope="col" class="py-3.5 pl-6 text-left"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="pl-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  Jane Cooper
+                  <dl class="lg:hidden font-normal">
+                    <dt class="sr-only sm:hidden">Title</dt>
+                    <dd class="sm:hidden text-gray-700 mt-1">Regional Paradigm Technician</dd>
+                    <dt class="sr-only">Email</dt>
+                    <dd class="text-gray-500 mt-1 sm:text-gray-700">jane@test.com</dd>
+                  </dl>
+                </td>
+                <td class="hidden sm:table-cell pl-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  Regional Paradigm Technician
+                </td>
+                <td class="hidden lg:table-cell pl-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  jane@test.com
+                </td>
+                <td class="pl-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                <td class="pl-6 py-4 pr-4 whitespace-nowrap text-right text-sm font-medium">
+                  <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </body>
